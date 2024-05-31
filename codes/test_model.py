@@ -1,6 +1,6 @@
-from model import resnet18_revise_model
+from codes.model import resnet18_revise_model
 import torch
-from dataloader import load_my_data
+from codes.dataloader import load_my_data
 
 
 
@@ -35,6 +35,6 @@ def test_my_model(dataloaders, model_path):
     return accuracy
 
 if __name__ == "__main__":
-    model_path = 'resnet18_finetuned.pth'
-    my_dataloaders, _ = load_my_data("/remote-home/yqwu/cub_200_bird/CUB_200_2011_data/CUB_200_2011/images")
+    model_path = '../resnet18_finetuned.pth'
+    my_dataloaders, _ = load_my_data("../CUB_200_2011/CUB_200_2011/CUB_200_2011/images")
     print(test_my_model(my_dataloaders, model_path))
